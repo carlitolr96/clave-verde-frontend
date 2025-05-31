@@ -1,7 +1,7 @@
+import { Route, Routes, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import { Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
 

@@ -56,14 +56,14 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-white text-gray-800 px-6 pt-16 pb-5 relative">
+    <footer className="md:px-16 lg:px-36 w-full bg-white text-gray-800 px-6 pt-16 pb-5 relative">
       <div className="container mx-auto max-w-7xl space-y-16">
         {/* Info principal */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
           <div className="flex-1 space-y-4 text-center lg:text-left mx-auto lg:mx-0 max-w-md lg:max-w-none">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-0">Haz tu reserva con nosotros.</h2>
             <h2 className="text-2xl sm:text-3xl font-semibold">Estamos listos para atenderte.</h2>
-            <button className="bg-ecolodge text-white px-6 py-3 rounded hover:opacity-90 text-sm sm:text-base mt-4">Booking</button>
+            <button className="bg-ecolodge text-white px-8 py-2.5 rounded-full hover:opacity-90 text-sm sm:text-base mt-4">Booking</button>
           </div>
 
           {/* Enlaces y contacto */}
@@ -101,7 +101,7 @@ function Footer() {
         </div>
 
         {/* Texto decorativo en movimiento */}
-        <div className="overflow-hidden w-full">
+        <div className="overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] w-full">
           <motion.div
             className="flex gap-10 text-4xl sm:text-5xl md:text-6xl font-light text-gray-400 whitespace-nowrap mb-1"
             animate={controls}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useClerk, useUser, UserButton } from '@clerk/clerk-react';
 
 function NavBar() {
   const navLinks = [
@@ -12,6 +13,9 @@ function NavBar() {
 
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const { openSignIn } = useClerk()
+  const { user } = useUser()
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -48,10 +52,15 @@ function NavBar() {
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
-        <button className="bg-green-500 text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
-          Book Soon
-        </button>
+        {user ? (
+          <UserButton />
+        ) : (
+          <button onClick={() => openSignIn()}className="cursor-pointer bg-ecolodge text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500">
+            Login
+          </button>
+        )}
       </div>
+
 
       {/* Mobile Menu Button */}
       <div className="flex items-center gap-3 md:hidden">
@@ -84,9 +93,13 @@ function NavBar() {
           </a>
         ))}
 
-        <button className="bg-green-500 text-white px-8 py-2.5 rounded-full transition-all duration-500">
-          Book Soon
-        </button>
+        {user ? (
+          <UserButton />
+        ) : (
+          <button onClick={() => openSignIn()} className="cursor-pointer bg-ecolodge text-white px-8 py-2.5 rounded-full transition-all duration-500">
+            Login
+          </button>
+        )}
       </div>
     </nav>
   );
