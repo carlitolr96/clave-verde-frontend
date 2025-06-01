@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const logos = [
-    "./src/assets/partner1.svg",
-    "./src/assets/partner2.svg",
-    "./src/assets/partner3.svg",
-    "./src/assets/partner4.svg",
+    "./public/partner1.svg",
+    "./public/partner2.svg",
+    "./public/partner3.svg",
+    "./public/partner4.svg",
 ];
 
 export default function InfiniteScroll() {

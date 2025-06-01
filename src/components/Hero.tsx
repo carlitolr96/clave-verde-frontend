@@ -6,7 +6,7 @@ import { IoSearchSharp } from "react-icons/io5";
 
 function Hero() {
     return (
-        <div className="relative h-screen bg-no-repeat bg-cover bg-center bg-[url('/src/assets/Hero.jpg')]">
+        <div className="relative h-screen bg-no-repeat bg-cover bg-center bg-[url('/Hero.jpg')]">
             <div className="absolute inset-0 bg-black/70 z-0" />
             <div className="relative z-10 flex flex-col items-start justify-center h-full px-6 md:px-16 lg:px-24 xl:px-32 text-white">
                 <div className="flex items-center space-x-2.5 border border-green-500/30 rounded-full bg-green-500/20 p-1 text-sm text-white">
