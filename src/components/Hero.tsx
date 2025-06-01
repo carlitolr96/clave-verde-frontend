@@ -79,7 +79,7 @@ function Hero() {
                         />
                     </div>
 
-                    <button className="max-md:w-full flex items-center justify-center gap-1 bg-secondary px-8 py-2.5 rounded-full text-white my-auto cursor-pointer max-md:py-1">
+                    <button className="max-md:w-full flex items-center justify-center gap-1 bg-primary px-8 py-2.5 rounded-full text-white my-auto cursor-pointer max-md:py-1">
                         <IoSearchSharp />
                         <span>Buscar</span>
                     </button>
