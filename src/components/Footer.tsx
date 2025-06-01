@@ -74,22 +74,36 @@ function Footer() {
 
           {/* Enlaces y contacto */}
           <div className="flex-1 flex items-start md:justify-end gap-20 md:gap-40">
-            <div>
-              <h4 className="font-semibold mb-4">Enlaces</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Privacy policy</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contáctanos</h4>
-              <div className="space-y-2 text-sm">
-                <p>(849) 205-1146</p>
-                <p>contacto@claveverde.com</p>
+
+
+            <div className="grid grid-cols-5 grid-rows-3 gap-4">
+              <div className="col-span-2 row-span-2">
+                <h4 className="font-semibold mb-4">Enlaces</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link className="hover:opacity-60" to={'/'}>Home</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>About</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Hotels</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Experience</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Contact us</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Site map</Link></li>
+                </ul>
+              </div>
+              <div className="col-span-2 col-start-3">
+                <h4 className="font-semibold mb-4">Contáctanos</h4>
+                <div className="space-y-2 text-sm">
+                  <p>(849) 205-1146</p>
+                  <p>contacto@claveverde.com</p>
+                </div>
+              </div>
+              <div className="col-span-3 col-start-3 row-start-2">
+                <h4 className="font-semibold mb-4">Informacion</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link className="hover:opacity-60" to={'/'}>Politicas de privacidad</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Terminos y condiciones</Link></li>
+                </ul>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -99,7 +113,7 @@ function Footer() {
             } transition-opacity duration-500`}
         >
           <div className="pointer-events-auto">
-            <div className="fixed inset-x-0 bottom-52 flex justify-end sm:justify-center pr-4 sm:pr-0 pointer-events-none z-50">
+            <div className="fixed inset-x-0 bottom-52 flex justify-center sm:justify-center pr-4 sm:pr-0 pointer-events-none z-50">
               <button
                 onClick={scrollToTop}
                 className="w-16 h-16 cursor-pointer bg-primary text-white rounded-full flex items-center justify-center text-xl shadow-xl hover:bg-[#fe9502] transition duration-300 animate-bounce pointer-events-auto"
