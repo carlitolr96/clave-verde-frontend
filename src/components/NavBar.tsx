@@ -57,7 +57,7 @@ function NavBar() {
         {user && (
           <button
             onClick={() => navigate('/owner')}
-            className={`px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all border ${isScrolled ? "bg-primary text-white border-primary" : "border-white text-white bg-transparent"
+            className={`px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all border hover:opacity-90 ${isScrolled ? "bg-primary text-white border-primary" : "border-white text-white bg-transparent"
               }`}
           >
             Dashboard
@@ -80,7 +80,7 @@ function NavBar() {
         ) : (
           <button
             onClick={() => openSignIn()}
-            className="cursor-pointer bg-ecolodge text-white px-7 py-1 rounded-full ml-4 transition-all duration-500"
+            className="cursor-pointer bg-ecolodge text-white px-7 py-1 rounded-full ml-4 transition-all duration-500 hover:opacity-90"
           >
             Login
           </button>
@@ -115,7 +115,7 @@ function NavBar() {
         ) : (
           <button
             onClick={() => openSignIn()}
-            className="cursor-pointer bg-ecolodge text-white text-sm px-7 py-1 rounded-full transition-all duration-500"
+            className="cursor-pointer bg-ecolodge text-white text-sm px-7 py-1 rounded-full transition-all duration-500 hover:opacity-90"
           >
             Login
           </button>
@@ -145,7 +145,7 @@ function NavBar() {
               setIsMenuOpen(false);
               navigate('/owner');
             }}
-            className="px-4 py-1 bg-primary border-primary text-white font-medium text-sm rounded-full cursor-pointer transition-all border"
+            className="px-4 py-1 bg-primary border-primary text-white font-medium text-sm rounded-full cursor-pointer transition-all border hover:opacity-90"
           >
             Dashboard
           </button>
