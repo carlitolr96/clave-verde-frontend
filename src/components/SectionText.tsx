@@ -1,15 +1,13 @@
-import Word from './Word';
+import Word from "./Word";
 
-const paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+const paragraph = `Sesion de prueba Scroll Effect   `;
 
 const SectionText = () => {
   return (
-    <main className='bg-primary'>
-        <div style={{height: "100vh"}}></div>
-        <Word value={paragraph} />
-        <div style={{height: "100vh"}}></div>
+    <main className="bg-primary">
+      <Word value={paragraph} />
     </main>
-  )
-}
+  );
+};
 
-export default SectionText
+export default SectionText;

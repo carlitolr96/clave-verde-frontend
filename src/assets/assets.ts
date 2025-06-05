@@ -123,18 +123,18 @@ export const userDummyData = {
     "updatedAt": "2025-04-10T06:34:48.719Z",
     "__v": 1,
     "recentSearchedCities": [
-        "New York"
+        "Las Terrenas"
     ]
 }
 
 // Hotel Dummy Data
 export const hotelDummyData = {
     "_id": "67f76393197ac559e4089b72",
-    "name": "Urbanza Suites",
-    "address": "Main Road  123 Street , 23 Colony",
-    "contact": "+0123456789",
+    "name": "Clave Verde Ecolodge",
+    "address": "La Barbacoa, C. Luna, El Limón 32000",
+    "contact": "(849) 205-1146",
     "owner": userDummyData,
-    "city": "New York",
+    "city": "Las Terrenas",
     "createdAt": "2025-04-10T06:22:11.663Z",
     "updatedAt": "2025-04-10T06:22:11.663Z",
     "__v": 0
@@ -178,18 +178,6 @@ export const roomsDummyData = [
         "updatedAt": "2025-04-10T06:24:06.285Z",
         "__v": 0
     },
-    {
-        "_id": "67f763d8197ac559e4089b7a",
-        "hotel": hotelDummyData,
-        "roomType": "Single Bed",
-        "pricePerNight": 199,
-        "amenities": ["Free WiFi", "Room Service", "Pool Access"],
-        "images": [roomImg4, roomImg1, roomImg2, roomImg3],
-        "isAvailable": true,
-        "createdAt": "2025-04-10T06:23:20.252Z",
-        "updatedAt": "2025-04-10T06:23:20.252Z",
-        "__v": 0
-    }
 ]
 
 

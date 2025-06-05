@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useClerk, useUser, UserButton } from '@clerk/clerk-react';
 import { FaRegAddressBook } from "react-icons/fa6";
+import LeavesEcology from "../assets/leaves-ecology.svg"
+import LeavesWhite from "../assets/leaves-white.svg"
 
 function NavBar() {
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/' },
     { name: 'Hotels', path: '/rooms' },
+    { name: 'About', path: '/' },
     { name: 'Experience', path: '/rooms' },
     { name: 'Contact', path: '/' },
   ];
@@ -37,6 +39,7 @@ function NavBar() {
     <nav className={`fixed top-0 primary left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
       {/* Logo */}
       <Link to="/" className="flex items-center gap-2">
+        <img src={isScrolled ? LeavesEcology : LeavesWhite} alt="Leaves logo" className="h-8 w-auto" />
         <h1 className={`h-9 text-2xl transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>
           Clave Verde
         </h1>

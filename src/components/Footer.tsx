@@ -63,7 +63,7 @@ function Footer() {
       <div className="container mx-auto max-w-7xl space-y-16">
 
         {/* Sección principal */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mt-12">
           <div className="flex-1 space-y-4 text-center lg:text-left mx-auto lg:mx-0 max-w-md lg:max-w-none">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-0">Haz tu reserva con nosotros.</h2>
             <h2 className="text-2xl sm:text-3xl font-semibold">Estamos listos para atenderte.</h2>
