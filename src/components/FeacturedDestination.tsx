@@ -1,4 +1,4 @@
-import { roomsDummyData } from '../assets/assets'
+import { roomsDummyData } from '../../src/assets/assets'
 import HotelCard from './HotelCard'
 import TitlePage from './TitlePage'
 import { useNavigate } from 'react-router-dom'
