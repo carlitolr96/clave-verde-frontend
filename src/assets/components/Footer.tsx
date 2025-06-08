@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Link as ScrollLink } from 'react-scroll';
 import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import { motion, useAnimationControls } from "framer-motion";
@@ -10,21 +9,12 @@ function Footer() {
   const [showButton, setShowButton] = useState(false);
   const footerRef = useRef<HTMLDivElement | null>(null);
 
-  const footerLinks = [
-    { name: 'Home', id: 'home-page' },
-    { name: 'Rooms', id: 'rooms-card' },
-    { name: 'Experience', id: 'experience-sesion' },
-    { name: 'Contact', id: 'contact-us' },
-    { name: 'Site Maps', path: 'site-maps' },
-  ];
-
   const words = [
-    { name: "Instagram", link: "https://www.instagram.com/claveverdeecolodge" },
-    { name: "Facebook", link: "https://web.facebook.com/clave.verde/" },
+    { name: "Instagram", link: "https://www.instagram.com" },
+    { name: "Facebook", link: "https://www.facebook.com" },
     { name: "WhatsApp", link: "https://wa.me/18492051146" },
     { name: "Twitter", link: "https://twitter.com" }
   ];
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,8 +66,8 @@ function Footer() {
           <div className="flex-1 space-y-4 text-center lg:text-left mx-auto lg:mx-0 max-w-md lg:max-w-none">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-0">Haz tu reserva con nosotros.</h2>
             <h2 className="text-2xl sm:text-3xl font-semibold">Estamos listos para atenderte.</h2>
-            <button className="bg-ecolodge text-white px-8 py-2.5 rounded-full hover:opacity-90 text-sm sm:text-base mt-4 cursor-pointer">
-              Reservar
+            <button className="bg-ecolodge text-white px-8 py-2.5 rounded-full hover:opacity-90 text-sm sm:text-base mt-4">
+              Booking
             </button>
           </div>
 
@@ -88,58 +78,26 @@ function Footer() {
               <div className="col-span-2 row-span-2">
                 <h4 className="font-semibold mb-4">Enlaces</h4>
                 <ul className="space-y-2 text-sm">
-                  {footerLinks.map((link, i) => (
-                    link.id ? (
-                      <ScrollLink
-                        key={i}
-                        to={link.id}
-                        smooth={true}
-                        duration={600}
-                        offset={-50}
-                      >
-                        <li className="hover:opacity-60 cursor-pointer mb-4">{link.name}</li>
-                      </ScrollLink>
-                    ) : (
-                      <Link
-                        key={i}
-                        to={`/${link.path}`}
-                        onClick={() => window.location.href = '/site-maps'}
-                      >
-                        <li className="hover:opacity-60 cursor-pointer mb-4">{link.name}</li>
-                      </Link>
-                    )
-                  ))}
-
+                  <li><Link className="hover:opacity-60" to={'/'}>Home</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>About</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Hotels</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Experience</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Contact us</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Site map</Link></li>
                 </ul>
               </div>
               <div className="col-span-2 col-start-3">
                 <h4 className="font-semibold mb-4">Contáctanos</h4>
                 <div className="space-y-2 text-sm">
                   <p>(849) 205-1146</p>
-                  <a href="mailto:contacto@claveverde.com" className="text-ecolodge hover:underline">
-                    contacto@claveverde.com
-                  </a>
+                  <p>contacto@claveverde.com</p>
                 </div>
               </div>
               <div className="col-span-3 col-start-3 row-start-2">
                 <h4 className="font-semibold mb-4">Informacion</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>
-                    <Link
-                      className="hover:opacity-60"
-                      to="/politicas-privacidad"
-                      onClick={() => window.location.href = '/politicas-privacidad'}>
-                      Politicas de privacidad
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="hover:opacity-60"
-                      to={'/terminos-condiciones'}
-                      onClick={() => window.location.href = '/terminos-condiciones'}>
-                      Terminos y condiciones
-                    </Link>
-                  </li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Politicas de privacidad</Link></li>
+                  <li><Link className="hover:opacity-60" to={'/'}>Terminos y condiciones</Link></li>
                 </ul>
               </div>
             </div>
