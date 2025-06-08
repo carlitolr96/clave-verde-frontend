@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useClerk, useUser, UserButton } from '@clerk/clerk-react';
+import { Link as ScrollLink } from 'react-scroll';
 import { FaRegAddressBook } from "react-icons/fa6";
 import LeavesEcology from "../assets/leaves-ecology.svg"
 import LeavesWhite from "../assets/leaves-white.svg"
 
 function NavBar() {
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Hotels', path: '/rooms' },
-    { name: 'Experience', path: '/rooms' },
-    { name: 'Contact', path: '/' },
+    { name: 'Inicio', id: 'home-page' },
+    { name: 'Habitaciones', id: 'rooms-card' },
+    { name: 'Experiencia', id: 'experience-sesion' },
+    { name: 'Contacto', id: 'contact-us' },
   ];
+
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,22 +49,20 @@ function NavBar() {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
-          <Link key={i} to={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
+          <ScrollLink
+            key={i}
+            to={link.id}
+            smooth={true}
+            duration={600}
+            offset={-50}
+            className={`cursor-pointer group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}
+          >
             {link.name}
             <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
-          </Link>
+          </ScrollLink>
         ))}
-
-        {user && (
-          <button
-            onClick={() => navigate('/owner')}
-            className={`px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all border hover:opacity-90 ${isScrolled ? "bg-primary text-white border-primary" : "border-white text-white bg-transparent"
-              }`}
-          >
-            Dashboard
-          </button>
-        )}
       </div>
+
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
@@ -132,10 +132,19 @@ function NavBar() {
           </button>
 
           {navLinks.map((link, i) => (
-            <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+            <ScrollLink
+              key={i}
+              to={link.id}
+              smooth={true}
+              duration={600}
+              offset={-50}
+              onClick={() => setIsMenuOpen(false)}
+              className="cursor-pointer"
+            >
               {link.name}
-            </a>
+            </ScrollLink>
           ))}
+
         </div>
 
         {user && (

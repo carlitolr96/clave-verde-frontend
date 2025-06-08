@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-// import styles from "../page.module.scss";
 
 interface WordItemProps {
   word: string;
