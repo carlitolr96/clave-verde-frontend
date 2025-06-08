@@ -4,7 +4,7 @@ const paragraph = `Sesion de prueba Scroll Effect   `;
 
 const SectionText = () => {
   return (
-    <main className="bg-primary" id="experience-sesion">
+    <main className="bg-primary">
       <Word value={paragraph} />
     </main>
   );
