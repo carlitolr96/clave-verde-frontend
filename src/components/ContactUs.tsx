@@ -10,13 +10,13 @@ const ContactSection = () => {
   const form = useRef<HTMLFormElement>(null);
 
   return (
-    <section className="relative h-[100vh] w-full bg-emerald-600" id="contact-us">
+    <section className="relative h-[100vh] w-full bg-slate-300" id="contact-us">
       <div className="relative h-full w-full">
         <div className="absolute inset-0 z-0">
           
         </div>
 
-        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-full max-w-md bg-white p-8 rounded-xl shadow-lg z-10 mx-4 md:mx-16 lg:mx-36">
+        <div className="absolute top- right-0 transform -translate-y-1/2 w-full max-w-md bg-white p-8 rounded-xl shadow-lg z-10 mx-4 md:mx-16 lg:mx-36">
           <h3 className="text-xl font-semibold mb-6 text-gray-900">
             Envíanos un mensaje
           </h3>
