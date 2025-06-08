@@ -68,11 +68,10 @@ function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="md:px-16 lg:px-36 w-full bg-white text-gray-800 px-6 pt-16 pb-5 relative"
+      className="md:px-16 pt-16 lg:px-20 w-full bg-slate-50 text-gray-800 pb-5 relative"
     >
-      <div className="container mx-auto max-w-7xl space-y-16">
-
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mt-10">
+      <div className="px-6">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-10">
           <div className="flex-1 space-y-4 text-center lg:text-left mx-auto lg:mx-0 max-w-md lg:max-w-none">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-0">Haz tu reserva con nosotros.</h2>
             <h2 className="text-2xl sm:text-3xl font-semibold">Estamos listos para atenderte.</h2>
