@@ -1,17 +1,12 @@
 import TitleSection from '../components/TitleSection';
-import SEO from "../components/SEO";
 import Breadcrumb from '../components/Breadcrumb';
 
 export default function PrivacyPolicies() {
     return (
         <>
-            <SEO
-                title="Politicas Y Privacidad - Clave Verde"
-                description="Conoce nuestras politicas y privacidad"
-            />
             <div className="flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-24 px-4 md:px-16 lg:px-28">
                 <div>
-                <Breadcrumb />
+                    <Breadcrumb />
                     <TitleSection
                         title="Privacy and Policies"
                         subTitle="Lorem ipsum dolor sit amet consectetur adipisicing elit."

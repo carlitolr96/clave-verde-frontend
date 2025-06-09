@@ -1,14 +1,9 @@
-import SEO from "../components/SEO";
 import Breadcrumb from "../components/Breadcrumb";
 import TitleSection from "../components/TitleSection";
 
 export default function Faq() {
   return (
     <>
-      <SEO
-        title="Preguntas Frecuentes - Clave Verde"
-        description="Conoce nuestras Preguntas Frecuentes"
-      />
       <div className="flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-24 px-4 md:px-16 lg:px-28">
         <div>
           <Breadcrumb />

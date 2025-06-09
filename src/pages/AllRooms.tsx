@@ -4,7 +4,6 @@ import TitleSection from '../components/TitleSection';
 import StarRating from '../components/StarRating';
 import { assets, facilityIcons, roomsDummyData } from '../assets/assets';
 import clsx from 'clsx';
-import SEO from "../components/SEO";
 import Breadcrumb from '../components/Breadcrumb';
 
 type Room = (typeof roomsDummyData)[0];
@@ -78,13 +77,9 @@ const AllRooms = () => {
 
     return (
         <>
-            <SEO
-                title="Todas los Paquetes - Clave Verde"
-                description="Conoce nuestros paquetes en Clave Verde."
-            />
             <div className="flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-24 px-4 md:px-16 lg:px-28">
                 <div>
-                    <Breadcrumb  />
+                    <Breadcrumb />
                     <TitleSection
                         title="All Rooms"
                         subTitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ducimus nisi fugiat!"

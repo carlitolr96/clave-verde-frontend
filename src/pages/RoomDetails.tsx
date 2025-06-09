@@ -4,7 +4,6 @@ import { assets, facilityIcons, roomsDummyData } from '../assets/assets';
 import LeavesEcology from "../assets/leaves-ecology.svg"
 import StarRating from '../components/StarRating';
 import ReservationForm from '../components/ReservationForm';
-import SEO from "../components/SEO";
 import Breadcrumb from "../components/Breadcrumb";
 
 type Room = {
@@ -41,10 +40,6 @@ const RoomDetails = () => {
 
     return room ? (
         <>
-            <SEO
-                title="Detaller de los paquetes - Clave Verde"
-                description="Conoce nuestros paquetes de turismo sostenible y ecológico, diseñados para ofrecerte una experiencia única y responsable con el medio ambiente."
-            />
             <div className='py-28 md:py-24 px-4 md:px-16 lg:px-24 xl:px-32'>
                 <Breadcrumb />
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between w-full">
