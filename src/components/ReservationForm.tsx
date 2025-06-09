@@ -190,7 +190,7 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
 
                 <button
                     type="submit"
-                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-full text-white text-sm font-semibold hover:brightness-110 transition"
+                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-full text-white text-sm font-semibold hover:brightness-110 transition  cursor-pointer"
                 >
                     <IoSearchSharp />
                     <span>Reservar</span>
@@ -257,13 +257,13 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
                                                 setShowModal(false);
                                                 setCurrentStep(1);
                                             }}
-                                            className="text-gray-500 hover:text-gray-700 text-sm"
+                                            className="text-gray-500 hover:text-gray-700 text-sm  cursor-pointer"
                                         >
                                             Cancelar
                                         </button>
                                         <button
                                             onClick={handleFinalSubmit}
-                                            className="bg-primary text-white px-4 py-2 rounded text-sm font-semibold"
+                                            className="bg-primary text-white px-4 py-2 rounded text-sm font-semibold cursor-pointer"
                                         >
                                             Confirmar Reserva
                                         </button>
