@@ -5,6 +5,8 @@ import PrivacyPolicies from './pages/PrivacyPolicies'
 import TermsCondition from './pages/TermsCondition'
 import SiteMaps from './pages/SiteMaps';
 import Footer from './components/Footer';
+import AllRooms from './pages/AllRooms';
+import RoomDetails from './pages/RoomDetails';
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
       <div className='min-h-[70vh]'>
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path='/rooms' element={<AllRooms />} />
+          <Route path='/rooms/:id' element={<RoomDetails />} />
           <Route path="/politicas-privacidad" element={<PrivacyPolicies />} />
           <Route path="/terminos-condiciones" element={<TermsCondition />} />
           <Route path="/site-maps" element={<SiteMaps />} />

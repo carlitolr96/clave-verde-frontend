@@ -68,7 +68,7 @@ function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="md:px-16 pt-16 lg:px-20 w-full bg-slate-50 text-gray-800 pb-5 relative"
+      className="md:px-16 pt-16 lg:px-20 w-full bg-slate-50 text-gray-800 pb-5 relative border-t border-gray-200"
     >
       <div className="px-6">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-10">
@@ -152,7 +152,7 @@ function Footer() {
             } transition-opacity duration-500`}
         >
           <div className="pointer-events-auto">
-            <div className="fixed inset-x-0 bottom-52 flex justify-center sm:justify-center pr-4 sm:pr-0 pointer-events-none z-50">
+            <div className="fixed inset-x-0 bottom-40 flex justify-center sm:justify-center pr-4 sm:pr-0 pointer-events-none z-50">
               <button
                 onClick={scrollToTop}
                 className="w-16 h-16 cursor-pointer bg-primary text-white rounded-full flex items-center justify-center text-xl shadow-xl hover:bg-[#fe9502] transition duration-300 animate-bounce pointer-events-auto"

@@ -2,17 +2,21 @@ import { roomsDummyData } from '../assets/assets'
 import HotelCard from './HotelCard'
 import TitlePage from './TitlePage'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
 
 const FeacturedDestination = () => {
 
+  const { t } = useTranslation();
   const navigate = useNavigate()
 
   return (
     <div className='flex flex-col items-center py-10 bg-slate-50' id='rooms-card'>
+
       <TitlePage
-        title='Vive la experiencia Clave Verde'
-        subTitle='Sumérgete en la tranquilidad de la naturaleza en Samaná con nuestros paquetes especiales.'
+        title={t("FeacturedDestination.title")}
+        subTitle={t("FeacturedDestination.subTitle")}
       />
+
       <div className='flex flex-wrap items-center justify-center gap-6 mt-12'>
         {roomsDummyData.slice(0, 4).map((room, index) => (
           <HotelCard key={room._id} room={room} index={index} />

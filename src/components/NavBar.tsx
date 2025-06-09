@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useClerk, useUser, UserButton } from '@clerk/clerk-react';
+import { Link, useNavigate, useLocation } from "react-router-dom"; 
+import { useUser, UserButton } from '@clerk/clerk-react'; // useClerk, 
 import { Link as ScrollLink } from 'react-scroll';
 import { FaRegAddressBook } from "react-icons/fa6";
 import LeavesEcology from "../assets/leaves-ecology.svg"
 import LeavesWhite from "../assets/leaves-white.svg"
+import LanguageSelector from './LanguageSelector';
 
 function NavBar() {
   const navLinks = [
@@ -14,11 +15,10 @@ function NavBar() {
     { name: 'Contacto', id: 'contact-us' },
   ];
 
-
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { openSignIn } = useClerk();
+  // const { openSignIn } = useClerk();
   const { user } = useUser();
   const navigate = useNavigate();
   const location = useLocation();
@@ -66,6 +66,7 @@ function NavBar() {
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
+        <LanguageSelector isScrolled={isScrolled} />
         {user ? (
           <UserButton>
             <UserButton.MenuItems>
@@ -78,10 +79,12 @@ function NavBar() {
           </UserButton>
         ) : (
           <button
-            onClick={() => openSignIn()}
-            className="cursor-pointer bg-ecolodge text-white px-7 py-1 rounded-full ml-4 transition-all duration-500 hover:opacity-90"
-          >
+            // onClick={() => openSignIn()}
+            className="flex items-center justify-between text-sm h-10 w-32 gap-8 rounded-full pr-7 text-white pl-5 bg-ecolodge active:scale-95 transition">
             Login
+            <div className="bg-white text-ecolodge ml-1 rounded-full h-7 w-10 flex items-center justify-center">
+              <span className='text-[9px] p-1'>BETA</span>
+            </div>
           </button>
         )}
       </div>
@@ -113,10 +116,12 @@ function NavBar() {
           </UserButton>
         ) : (
           <button
-            onClick={() => openSignIn()}
-            className="cursor-pointer bg-ecolodge text-white text-sm px-7 py-1 rounded-full transition-all duration-500 hover:opacity-90"
-          >
+            // onClick={() => openSignIn()}
+            className="flex items-center justify-between text-sm h-10 w-32 gap-8 rounded-full pr-7 text-white pl-5 bg-ecolodge active:scale-95 transition">
             Login
+            <div className="bg-white text-ecolodge ml-1 rounded-full h-7 w-10 flex items-center justify-center">
+              <span className='text-[9px] p-1'>BETA</span>
+            </div>
           </button>
         )}
       </div>
@@ -144,7 +149,6 @@ function NavBar() {
               {link.name}
             </ScrollLink>
           ))}
-
         </div>
 
         {user && (

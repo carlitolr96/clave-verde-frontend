@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { MdOutlinePersonOutline, MdOutlineEmail } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify";
 
 function ContactUs() {
   const form = useRef<HTMLFormElement>(null);
@@ -15,12 +16,12 @@ function ContactUs() {
       "FxluCNhCiB9nbDMmj"
     ).then(
       () => {
-        alert("¡Formulario enviado con éxito!");
+        toast.success("¡Formulario enviado con éxito!");
         form.current?.reset();
       },
       (error) => {
         console.error("Error al enviar:", error.text);
-        alert("Error al enviar el formulario.");
+        toast.error("Error al enviar el formulario.");
       }
     );
   };
@@ -93,6 +94,20 @@ function ContactUs() {
           </form>
         </div>
       </div>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
     </section>
   );
 }

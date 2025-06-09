@@ -3,7 +3,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
 import React from 'react';
 import App from './App';
+import './i18n'
 import './index.css'
+import "react-toastify/dist/ReactToastify.css";
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -1,11 +1,14 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { LuCalendarCheck2, LuCalendarX2 } from "react-icons/lu";
 import { MdPerson } from "react-icons/md";
-import { IoLocationOutline } from "react-icons/io5";
 import { IoSearchSharp } from "react-icons/io5";
 import TitleSection from "./TitleSection"
+import { useTranslation } from "react-i18next";
 
 function Hero() {
+
+    const { t } = useTranslation();
+
     return (
         <div className="relative h-screen bg-no-repeat bg-cover bg-center bg-[url('/Hero.jpg')]" id="home-page">
             <div className="absolute inset-0 bg-black/70 z-0" />
@@ -19,12 +22,12 @@ function Hero() {
                 </div>
 
                 <TitleSection
-                    title='Descubre tu destino ecológico perfecto'
-                    subTitle='Clave Verde, un refugio ecológico en Las Terrenas, República Dominicana. Naturaleza, vistas al mar y comodidad sostenible en el corazón del Caribe.'
+                    title={t("hero.title")}
+                    subTitle={t("hero.subTitle")}
                 />
 
                 <form className="bg-white text-gray-500 rounded-lg px-6 py-4 mt-8 flex flex-col md:flex-row max-md:items-start gap-4 max-md:mx-auto max-md:w-full">
-                    <div className="max-md:w-full md:w-auto">
+                    {/* <div className="max-md:w-full md:w-auto">
                         <div className="flex items-center gap-2">
                             <IoLocationOutline />
                             <label htmlFor="destinationInput">País de Origen</label>
@@ -37,7 +40,7 @@ function Hero() {
                             placeholder="Ingrese su país de origen"
                             required
                         />
-                    </div>
+                    </div> */}
 
                     <div className="max-md:w-full md:w-auto">
                         <div className="flex items-center gap-2">
@@ -83,7 +86,6 @@ function Hero() {
                         <span>Buscar</span>
                     </button>
                 </form>
-
 
             </div>
         </div>
