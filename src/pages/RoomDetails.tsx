@@ -4,6 +4,7 @@ import { assets, facilityIcons, roomsDummyData } from '../assets/assets';
 import StarRating from '../components/StarRating';
 import { LuCalendarCheck2, LuCalendarX2 } from "react-icons/lu";
 import { MdPerson } from "react-icons/md";
+import LeavesEcology from "../assets/leaves-ecology.svg"
 import { IoSearchSharp } from "react-icons/io5";
 
 const RoomDetails = () => {
@@ -28,11 +29,19 @@ const RoomDetails = () => {
 
     return room ? (
         <div className='py-28 md:py-32 px-4 md:px-16 lg:px-24 xl:px-32'>
-            <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>
-                <h1 className='text-3xl md:text-4xl font-playfair'>
-                    {room.hotel.name} <span className='font-inter text-sm'>{room.roomType}</span>
-                </h1>
-                <p className='text-xs font-inter py-1.5 px-3 text-white bg-orange-500 rounded-full'>20% OFF</p>
+            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between w-full">
+                <div className="flex flex-col md:flex-row md:items-center gap-2">
+                    <h1 className="text-2xl md:text-4xl font-playfair leading-snug">
+                        {room.hotel.name}
+                    </h1>
+                    <span className="text-sm font-inter text-gray-600 md:ml-3 px-3 py-1 rounded bg-gray-100">
+                        {room.roomType}
+                    </span>
+                </div>
+
+                <p className="text-xs font-inter px-3 py-1.5 text-white bg-orange-500 rounded-full w-max">
+                    20% OFF
+                </p>
             </div>
 
             <div className='flex items-center gap-1 mt-2'>
@@ -81,68 +90,77 @@ const RoomDetails = () => {
                 <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>
             </div>
 
-            <form className="bg-white text-gray-500 rounded-lg border border-gray-500/30 shadow-[0px_4px_4px_rgba(0,0,0,0.05)] px-6 py-4 mt-8 flex flex-col md:flex-row max-md:items-start gap-4 max-md:mx-auto max-md:w-full">
-                <div className='flex w-full justify-between'>
-                    <div className='flex items-center gap-2'>
-                        {/* <h2 className="text-lg font-semibold mb-2">Book Your Stay</h2> */}
-                        <div className="max-md:w-full md:w-auto">
-                            <div className="flex items-center gap-2">
-                                <LuCalendarCheck2 />
-                                <label htmlFor="checkIn">Llegada</label>
-                            </div>
-                            <input
-                                id="checkIn"
-                                type="date"
-                                className="max-md:w-full rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
-                            />
-                        </div>
+            <form className="bg-white text-gray-500 rounded-lg border border-gray-300 shadow px-6 py-6 mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                <div className="flex flex-col gap-4 w-full md:flex-row md:items-end">
 
-                        <div className="max-md:w-full md:w-auto">
-                            <div className="flex items-center gap-2">
-                                <LuCalendarX2 />
-                                <label htmlFor="checkOut">Salida</label>
-                            </div>
-                            <input
-                                id="checkOut"
-                                type="date"
-                                className="max-md:w-full rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
-                            />
-                        </div>
-
-                        <div className="max-md:w-full md:w-auto">
-                            <div className="flex items-center gap-2">
-                                <MdPerson />
-                                <label htmlFor="guests">Personas</label>
-                            </div>
-                            <input
-                                min={1}
-                                max={4}
-                                id="guests"
-                                type="number"
-                                className="max-md:w-full md:max-w-16 rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
-                                placeholder="0"
-                            />
-                        </div>
+                    <div className="w-full md:w-auto">
+                        <label htmlFor="checkIn" className="flex items-center gap-2 mb-1 text-sm font-medium">
+                            <LuCalendarCheck2 />
+                            Llegada
+                        </label>
+                        <input
+                            id="checkIn"
+                            type="date"
+                            className="w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
+                        />
                     </div>
 
-                    <button className="max-md:w-full flex items-center justify-center gap-1 bg-primary px-8 py-2.5 rounded-full text-white my-auto cursor-pointer max-md:py-1">
-                        <IoSearchSharp />
-                        <span>Book Now</span>
-                    </button>
+                    <div className="w-full md:w-auto">
+                        <label htmlFor="checkOut" className="flex items-center gap-2 mb-1 text-sm font-medium">
+                            <LuCalendarX2 />
+                            Salida
+                        </label>
+                        <input
+                            id="checkOut"
+                            type="date"
+                            className="w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
+                        />
+                    </div>
+
+                    <div className="w-full md:w-auto">
+                        <label htmlFor="guests" className="flex items-center gap-2 mb-1 text-sm font-medium">
+                            <MdPerson />
+                            Personas
+                        </label>
+                        <input
+                            id="guests"
+                            type="number"
+                            min={1}
+                            max={4}
+                            placeholder="0"
+                            className="w-full md:max-w-[70px] rounded border border-gray-200 px-3 py-2 text-sm outline-none"
+                        />
+                    </div>
                 </div>
+
+                <button
+                    type="submit"
+                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-full text-white text-sm font-semibold hover:brightness-110 transition"
+                >
+                    <IoSearchSharp />
+                    <span>Reservar</span>
+                </button>
             </form>
 
-            <div className='mt-20 space-y-4'>
+
+            <div className="mt-20 space-y-4">
                 {specifications.map((spec, index) => (
-                    <div key={index} className='flex items-center gap-2'>
-                        <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />
-                        <div>
-                            <p className='text-base'>{spec.title}</p>
-                            <p className='text-gray-500'>{spec.description}</p>
+                    <div key={index} className="flex items-start gap-4">
+                        <div className="w-8 h-8 flex-shrink-0">
+                            <img
+                                src={spec.icon}
+                                alt={`${spec.title}-icon`}
+                                className="w-full h-full object-cover rounded"
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <p className="text-base font-medium">{spec.title}</p>
+                            <p className="text-gray-500 text-sm">{spec.description}</p>
                         </div>
                     </div>
                 ))}
             </div>
+
 
             <div className='max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500'>
                 <p>
@@ -153,6 +171,19 @@ const RoomDetails = () => {
                     quam. Odio culpa possimus porro modi voluptates at nulla? Autem sit commodi
                     voluptatum nemo saepe itaque quaerat quibusdam, aperiam voluptate.
                 </p>
+            </div>
+
+            <div className='flex flex-col items-start gap-4'>
+                <div className='flex gap-4'>
+                    <img src={LeavesEcology} alt="Host" className="bg-gray-100 h-14 w-14 md:h-18 md:w-18 rounded-full object-contain" />
+                    <div>
+                        <p className='text-lg md:text-xl'>Hosted by {room.hotel.name}</p>
+                        <div className='flex items-center mt-1'>
+                            <StarRating />
+                            <p className='ml-2'>200+ reviews</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

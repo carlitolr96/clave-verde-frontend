@@ -117,7 +117,7 @@ function NavBar() {
         ) : (
           <button
             // onClick={() => openSignIn()}
-            className="flex items-center justify-between text-sm h-10 w-32 gap-8 rounded-full pr-7 text-white pl-5 bg-ecolodge active:scale-95 transition">
+            className="flex items-center justify-between text-sm h-10 w-24 gap-2 rounded-full pr-7 text-white pl-4 bg-ecolodge active:scale-95 transition">
             Login
             <div className="bg-white text-ecolodge ml-1 rounded-full h-7 w-10 flex items-center justify-center">
               <span className='text-[9px] p-1'>BETA</span>
