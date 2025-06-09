@@ -6,9 +6,8 @@ import TitleSection from "./TitleSection"
 import { useTranslation } from "react-i18next";
 
 function Hero() {
-
+    
     const { t } = useTranslation();
-
     return (
         <div className="relative h-screen bg-no-repeat bg-cover bg-center bg-[url('/Hero.jpg')]" id="home-page">
             <div className="absolute inset-0 bg-black/70 z-0" />
@@ -27,21 +26,6 @@ function Hero() {
                 />
 
                 <form className="bg-white text-gray-500 rounded-lg px-6 py-4 mt-8 flex flex-col md:flex-row max-md:items-start gap-4 max-md:mx-auto max-md:w-full">
-                    {/* <div className="max-md:w-full md:w-auto">
-                        <div className="flex items-center gap-2">
-                            <IoLocationOutline />
-                            <label htmlFor="destinationInput">País de Origen</label>
-                        </div>
-                        <input
-                            list="destinations"
-                            id="destinationInput"
-                            type="text"
-                            className="max-md:w-full rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"
-                            placeholder="Ingrese su país de origen"
-                            required
-                        />
-                    </div> */}
-
                     <div className="max-md:w-full md:w-auto">
                         <div className="flex items-center gap-2">
                             <LuCalendarCheck2 />
@@ -73,7 +57,7 @@ function Hero() {
                         </div>
                         <input
                             min={1}
-                            max={4}
+                            max={10}
                             id="guests"
                             type="number"
                             className="max-md:w-full md:max-w-16 rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none"

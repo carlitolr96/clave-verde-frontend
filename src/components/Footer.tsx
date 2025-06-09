@@ -15,7 +15,7 @@ function Footer() {
     { name: 'Habitaciones', id: 'rooms-card' },
     { name: 'Experiencia', id: 'experience-sesion' },
     { name: 'Contacto', id: 'contact-us' },
-    { name: 'Site Maps', path: 'site-maps' },
+    { name: 'Preguntas Frecuentes', path: 'preguntas-frecuentes' },
   ];
 
   const words = [
@@ -104,7 +104,7 @@ function Footer() {
                       <Link
                         key={i}
                         to={`/${link.path}`}
-                        onClick={() => window.location.href = '/site-maps'}
+                        onClick={() => window.location.href = '/preguntas-frecuentes'}
                       >
                         <li className="hover:opacity-60 cursor-pointer mb-4">{link.name}</li>
                       </Link>

@@ -9,7 +9,7 @@ import {
 import { MdPerson } from "react-icons/md";
 import { IoSearchSharp } from "react-icons/io5";
 import Lottie from "lottie-react";
-import successAnimation from "../../public/lotties/success.json";
+import successAnimation from "../lotties/success.json";
 
 interface ReservationFormProps {
     roomName: string;

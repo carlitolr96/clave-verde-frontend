@@ -3,10 +3,11 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import PrivacyPolicies from './pages/PrivacyPolicies'
 import TermsCondition from './pages/TermsCondition'
-import SiteMaps from './pages/SiteMaps';
+import Faq from './pages/Faq';
 import Footer from './components/Footer';
 import AllRooms from './pages/AllRooms';
 import RoomDetails from './pages/RoomDetails';
+import NotFound from "./components/NotFound";
 
 function App() {
 
@@ -22,7 +23,9 @@ function App() {
           <Route path='/rooms/:id' element={<RoomDetails />} />
           <Route path="/politicas-privacidad" element={<PrivacyPolicies />} />
           <Route path="/terminos-condiciones" element={<TermsCondition />} />
-          <Route path="/site-maps" element={<SiteMaps />} />
+          <Route path="/preguntas-frecuentes" element={<Faq />} />
+          {/* Ruta 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
