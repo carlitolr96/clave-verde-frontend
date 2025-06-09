@@ -2,6 +2,11 @@ import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { MdOutlinePersonOutline, MdOutlineEmail } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
+import {
+  EMAIL_SERVICE_ID,
+  EMAIL_TEMPLATE_CONTACT,
+  EMAIL_PUBLIC_KEY,
+} from "../utils/emailConfig";
 
 function ContactUs() {
   const form = useRef<HTMLFormElement>(null);
@@ -9,25 +14,25 @@ function ContactUs() {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_7t3akva",
-      "template_8embcbr",
-      form.current!,
-      "FxluCNhCiB9nbDMmj"
-    ).then(
-      () => {
-        toast.success("¡Formulario enviado con éxito!");
-        form.current?.reset();
-      },
-      (error) => {
-        console.error("Error al enviar:", error.text);
-        toast.error("Error al enviar el formulario.");
-      }
-    );
+    emailjs
+      .sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_CONTACT, form.current!, EMAIL_PUBLIC_KEY)
+      .then(
+        () => {
+          toast.success("¡Formulario enviado con éxito!");
+          form.current?.reset();
+        },
+        (error) => {
+          console.error("Error al enviar:", error.text);
+          toast.error("Error al enviar el formulario.");
+        }
+      );
   };
 
   return (
-    <section className="relative h-[100vh] bg-slate-300 py-20 px-6 md:px-16 lg:px-36 w-full text-gray-800 pt-16 pb-5" id="contact-us">
+    <section
+      className="relative h-[100vh] bg-slate-300 py-20 px-6 md:px-16 lg:px-36 w-full text-gray-800 pt-16 pb-5"
+      id="contact-us"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-10">
         <div className="flex flex-col justify-center">
           <p>Mapa</p>
@@ -38,20 +43,33 @@ function ContactUs() {
             Envíanos un mensaje
           </h3>
 
-          <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center text-sm text-slate-800">
-            <p className="text-xs bg-ecolodge text-white font-medium px-3 py-1 rounded-full">Contáctanos</p>
-            <h1 className="text-4xl font-bold py-4 text-center">Para saber más de ti</h1>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="flex flex-col items-center text-sm text-slate-800"
+          >
+            <p className="text-xs bg-ecolodge text-white font-medium px-3 py-1 rounded-full">
+              Contáctanos
+            </p>
+            <h1 className="text-4xl font-bold py-4 text-center">
+              Para saber más de ti
+            </h1>
             <p className="max-md:text-sm text-gray-500 pb-10 text-center">
               O simplemente contáctenos manualmente a través de{" "}
-              <a href="mailto:contacto@claveverde.com" className="text-ecolodge hover:underline">
+              <a
+                href="mailto:contacto@claveverde.com"
+                className="text-ecolodge hover:underline"
+              >
                 contacto@claveverde.com
               </a>
             </p>
 
             <div className="max-w-96 w-full px-4">
-              <label htmlFor="name" className="font-medium">Nombre Completo</label>
+              <label htmlFor="name" className="font-medium">
+                Nombre Completo
+              </label>
               <div className="flex items-center mt-2 mb-4 h-10 pl-3 border border-slate-300 rounded-full focus-within:ring-1 focus-within:ring-ecolodge transition-all overflow-hidden">
-                <MdOutlinePersonOutline size={'20px'} />
+                <MdOutlinePersonOutline size={"20px"} />
                 <input
                   type="text"
                   id="name"
@@ -62,9 +80,11 @@ function ContactUs() {
                 />
               </div>
 
-              <label htmlFor="email-address" className="font-medium mt-4">Correo Electrónico</label>
+              <label htmlFor="email-address" className="font-medium mt-4">
+                Correo Electrónico
+              </label>
               <div className="flex items-center mt-2 mb-4 h-10 pl-3 border border-slate-300 rounded-full focus-within:ring-1 focus-within:ring-ecolodge transition-all overflow-hidden">
-                <MdOutlineEmail size={'20px'} />
+                <MdOutlineEmail size={"20px"} />
                 <input
                   type="email"
                   id="email-address"
@@ -75,7 +95,9 @@ function ContactUs() {
                 />
               </div>
 
-              <label htmlFor="message" className="font-medium mt-4">Mensaje</label>
+              <label htmlFor="message" className="font-medium mt-4">
+                Mensaje
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -85,9 +107,16 @@ function ContactUs() {
                 required
               ></textarea>
 
-              <input type="hidden" name="date" value={new Date().toLocaleString()} />
+              <input
+                type="hidden"
+                name="date"
+                value={new Date().toLocaleString()}
+              />
 
-              <button type="submit" className="flex items-center justify-center gap-1 mt-5 bg-primary hover:opacity-90 cursor-pointer text-white py-2.5 w-full rounded-full transition">
+              <button
+                type="submit"
+                className="flex items-center justify-center gap-1 mt-5 bg-primary hover:opacity-90 cursor-pointer text-white py-2.5 w-full rounded-full transition"
+              >
                 Enviar Formulario
               </button>
             </div>
@@ -107,7 +136,6 @@ function ContactUs() {
         pauseOnHover
         theme="light"
       />
-
     </section>
   );
 }

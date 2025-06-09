@@ -1,15 +1,25 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { assets, facilityIcons, roomsDummyData } from '../assets/assets';
-import StarRating from '../components/StarRating';
-import { LuCalendarCheck2, LuCalendarX2 } from "react-icons/lu";
-import { MdPerson } from "react-icons/md";
 import LeavesEcology from "../assets/leaves-ecology.svg"
-import { IoSearchSharp } from "react-icons/io5";
+import StarRating from '../components/StarRating';
+import ReservationForm from '../components/ReservationForm';
+
+type Room = {
+  _id: string;
+  hotel: {
+    name: string;
+    address: string;
+  };
+  roomType: string;
+  images: string[];
+  amenities: string[];
+  pricePerNight: number;
+};
 
 const RoomDetails = () => {
     const { id } = useParams();
-    const [room, setRoom] = useState<any>(null);
+    const [room, setRoom] = useState<Room | null>(null);
     const [mainImage, setMainImage] = useState<string | null>(null);
 
     const specifications = [
@@ -90,58 +100,7 @@ const RoomDetails = () => {
                 <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>
             </div>
 
-            <form className="bg-white text-gray-500 rounded-lg border border-gray-300 shadow px-6 py-6 mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                <div className="flex flex-col gap-4 w-full md:flex-row md:items-end">
-
-                    <div className="w-full md:w-auto">
-                        <label htmlFor="checkIn" className="flex items-center gap-2 mb-1 text-sm font-medium">
-                            <LuCalendarCheck2 />
-                            Llegada
-                        </label>
-                        <input
-                            id="checkIn"
-                            type="date"
-                            className="w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
-                        />
-                    </div>
-
-                    <div className="w-full md:w-auto">
-                        <label htmlFor="checkOut" className="flex items-center gap-2 mb-1 text-sm font-medium">
-                            <LuCalendarX2 />
-                            Salida
-                        </label>
-                        <input
-                            id="checkOut"
-                            type="date"
-                            className="w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
-                        />
-                    </div>
-
-                    <div className="w-full md:w-auto">
-                        <label htmlFor="guests" className="flex items-center gap-2 mb-1 text-sm font-medium">
-                            <MdPerson />
-                            Personas
-                        </label>
-                        <input
-                            id="guests"
-                            type="number"
-                            min={1}
-                            max={4}
-                            placeholder="0"
-                            className="w-full md:max-w-[70px] rounded border border-gray-200 px-3 py-2 text-sm outline-none"
-                        />
-                    </div>
-                </div>
-
-                <button
-                    type="submit"
-                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-full text-white text-sm font-semibold hover:brightness-110 transition"
-                >
-                    <IoSearchSharp />
-                    <span>Reservar</span>
-                </button>
-            </form>
-
+            <ReservationForm roomName={room.hotel.name} />
 
             <div className="mt-20 space-y-4">
                 {specifications.map((spec, index) => (

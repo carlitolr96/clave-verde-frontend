@@ -1,0 +1,12 @@
+export const EMAIL_SERVICE_ID = "service_7t3akva";
+export const EMAIL_PUBLIC_KEY = "FxluCNhCiB9nbDMmj";
+
+export const EMAIL_TEMPLATE_CONTACT = "template_8embcbr";
+export const EMAIL_TEMPLATE_RESERVA = "template_1ti2ykh";
+
+export const EMAIL_CONFIG = {
+  SERVICE_ID: EMAIL_SERVICE_ID,
+  PUBLIC_KEY: EMAIL_PUBLIC_KEY,
+  TEMPLATE_CONTACT: EMAIL_TEMPLATE_CONTACT,
+  TEMPLATE_RESERVA: EMAIL_TEMPLATE_RESERVA,
+};

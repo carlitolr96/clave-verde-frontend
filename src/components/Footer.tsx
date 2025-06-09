@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link as ScrollLink } from 'react-scroll';
 import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
@@ -10,8 +9,6 @@ function Footer() {
   const [isHovered, setIsHovered] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const footerRef = useRef<HTMLDivElement | null>(null);
-
-  const navigate = useNavigate();
 
   const footerLinks = [
     { name: 'Inicio', id: 'home-page' },
@@ -28,9 +25,6 @@ function Footer() {
     { name: "Twitter", link: "https://twitter.com" }
   ];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -82,7 +76,7 @@ function Footer() {
             <h2 className="text-2xl sm:text-3xl font-semibold mb-0">Haz tu reserva con nosotros.</h2>
             <h2 className="text-2xl sm:text-3xl font-semibold">Estamos listos para atenderte.</h2>
             <button
-              onClick={() => navigate('/rooms')}
+              onClick={() => window.location.href = '/rooms'}
               className="bg-ecolodge text-white px-8 py-2.5 rounded-full hover:opacity-90 text-sm sm:text-base mt-4 cursor-pointer">
               Reservar
             </button>
