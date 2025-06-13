@@ -40,7 +40,7 @@ export default function Word({ value }: WordProps) {
     >
       <div className="absolute inset-0 bg-black/70 z-0" />
       <div className="sticky top-0 h-screen z-10 flex items-center justify-center px-4">
-        <p className={`paragraph max-w-3xl text-white text-center font-playfair text-2xl leading-relaxed`}>
+        <p className={`paragraph max-w-3xl text-white text-center font-marcellus text-2xl leading-relaxed`}>
           {words.map((word, i) => (
             <WordItem
               key={i}

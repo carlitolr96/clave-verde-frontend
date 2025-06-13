@@ -29,7 +29,7 @@ const HotelCard = ({ room, index }: HotelCardProps) => {
 
       <div className='p-4 pt-5'>
         <div className='flex items-center justify-between'>
-          <p className='font-playfair text-xl font-medium text-gray-800'>{room.hotel.name}</p>
+          <p className='font-marcellus text-xl font-medium text-gray-800'>{room.hotel.name}</p>
           <div className='flex items-center gap-1'>
             <img src={assets.starIconFilled} alt="start-icon" /> 4.5
           </div>

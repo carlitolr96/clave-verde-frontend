@@ -16,10 +16,21 @@ interface ReservationFormProps {
 }
 
 const ReservationForm = ({ roomName }: ReservationFormProps) => {
+    const getToday = (): string => {
+        const today = new Date();
+        return today.toISOString().split("T")[0];
+    };
+
+    const getTwoDaysLater = (): string => {
+        const date = new Date();
+        date.setDate(date.getDate() + 2);
+        return date.toISOString().split("T")[0];
+    };
+
     const [formData, setFormData] = useState({
-        checkIn: "",
-        checkOut: "",
-        guests: 1
+        checkIn: getToday(),
+        checkOut: getTwoDaysLater(),
+        guests: 2
     });
 
     const [userDetails, setUserDetails] = useState({
@@ -110,7 +121,11 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
         setShowSuccess(false);
         setShowModal(false);
         setCurrentStep(1);
-        setFormData({ checkIn: "", checkOut: "", guests: 1 });
+        setFormData({
+            checkIn: getToday(),
+            checkOut: getTwoDaysLater(),
+            guests: 2
+        });
         setUserDetails({ name: "", whatsapp: "", email: "" });
         setOrderNumber("");
     };
@@ -137,7 +152,7 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
         <>
             <form
                 onSubmit={handleSubmit}
-                className="bg-white text-gray-500 rounded-lg border border-gray-300 shadow px-6 py-6 mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+                className="bg-white text-gray-500 rounded-lg border border-gray-300 shadow px-6 py-6 mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
             >
                 <div className="flex flex-col gap-4 w-full md:flex-row md:items-end">
                     <div className="w-full md:w-auto">
@@ -190,7 +205,7 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
 
                 <button
                     type="submit"
-                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-full text-white text-sm font-semibold hover:brightness-110 transition  cursor-pointer"
+                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-full text-white text-sm font-semibold hover:brightness-110 transition cursor-pointer"
                 >
                     <IoSearchSharp />
                     <span>Reservar</span>
@@ -201,7 +216,7 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
                     <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg">
-                        <StepBar />
+                        {!showSuccess && <StepBar />}
 
                         {showSuccess ? (
                             <div className="flex flex-col items-center justify-center text-center">
@@ -257,7 +272,7 @@ const ReservationForm = ({ roomName }: ReservationFormProps) => {
                                                 setShowModal(false);
                                                 setCurrentStep(1);
                                             }}
-                                            className="text-gray-500 hover:text-gray-700 text-sm  cursor-pointer"
+                                            className="text-gray-500 hover:text-gray-700 text-sm cursor-pointer"
                                         >
                                             Cancelar
                                         </button>

@@ -4,7 +4,7 @@ interface TitleProps {
   font?: string;
 }
 
-const Title = ({ title, subTitle, font = 'font-playfair' }: TitleProps) => {
+const Title = ({ title, subTitle, font = 'font-marcellus' }: TitleProps) => {
   return (
     <div className="">
       <h1 className={`text-4xl md:text-[56px] md:leading-[56px] font-bold md:font-extrabold max-w-xl mt-4 ${font}`}>{title}</h1>

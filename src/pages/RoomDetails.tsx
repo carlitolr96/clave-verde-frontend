@@ -44,7 +44,7 @@ const RoomDetails = () => {
                 <Breadcrumb />
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between w-full">
                     <div className="flex flex-col md:flex-row md:items-center gap-2">
-                        <h1 className="text-2xl md:text-4xl font-playfair leading-snug">
+                        <h1 className="text-2xl md:text-4xl font-marcellus leading-snug">
                             {room.hotel.name}
                         </h1>
                         <span className="text-sm font-inter text-gray-600 md:ml-3 px-3 py-1 rounded bg-gray-100">
@@ -86,7 +86,7 @@ const RoomDetails = () => {
 
                 <div className='flex flex-col md:flex-row md:justify-between mt-10'>
                     <div className='flex flex-col'>
-                        <h1 className='text-3xl md:text-4xl font-playfair'>Experience Luxury Like Never Before</h1>
+                        <h1 className='text-3xl md:text-4xl font-marcellus'>Experience Luxury Like Never Before</h1>
                         <div className='flex flex-wrap items-center mt-3 mb-6 gap-4'>
                             {room.amenities.map((item: string, index: number) => (
                                 <div key={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100'>
@@ -103,6 +103,7 @@ const RoomDetails = () => {
                     <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>
                 </div>
 
+                <h1 className='text-2xl text-gray-800'>Reservar</h1>
                 <ReservationForm roomName={room.hotel.name} />
 
                 <div className="mt-20 space-y-4">

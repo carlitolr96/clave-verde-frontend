@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -14,8 +14,8 @@
   font-family: 'Outfit', sans-serif;
 }
 
-.font-playfair {
-  font-family: 'Playfair', serif !important;
+.font-marcellus {
+  font-family: "Marcellus SC", serif !important;
 }
 
 .paragraph {
@@ -28,4 +28,5 @@
 
 .word {
   transition: opacity 0.3s ease;
+  font-family: "Marcellus SC", serif !important;
 }

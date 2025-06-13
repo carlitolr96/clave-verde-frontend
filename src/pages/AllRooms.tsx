@@ -99,7 +99,7 @@ const AllRooms = () => {
                             />
                             <div className="md:w-full flex flex-col gap-2">
                                 <p className="text-gray-500">{room.hotel.city}</p>
-                                <p className="text-gray-800 text-3xl font-playfair cursor-pointer">
+                                <p className="text-gray-800 text-3xl font-marcellus cursor-pointer">
                                     {room.hotel.name}
                                 </p>
                                 <div className="flex items-center gap-1 text-gray-500 mt-2">
@@ -136,7 +136,7 @@ const AllRooms = () => {
                 </div>
 
                 {/* Filtros */}
-                <div className="bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16 rounded-lg shadow-lg p-6">
+                <div className="bg-white w-full md:w-80 border border-gray-300 text-gray-600 mb-8 md:mt-16 rounded-lg shadow-lg p-6">
                     <div
                         className={clsx(
                             'flex items-center justify-between px-5 py-2.5',

@@ -1,23 +1,45 @@
-import Hero from "../components/Hero"
-// import Partner from "../components/Partner"
-// import AboutUs from "../components/AboutUs"
-import ContactUs from "../components/ContactUs"
-// import Testimonials from "../components/Testimonials"
-import FeacturedDestination from '../components/FeacturedDestination'
-import SectionText from "../components/SectionText"
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import type { Location } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 
-const Home = () => {
-  return (
-    <>
-      <Hero />
-      {/* <Partner /> */}
-      <FeacturedDestination />
-      <SectionText />
-      {/* <AboutUs /> */}
-      {/* <Testimonials /> */}
-      <ContactUs />
-    </>
-  )
+import Hero from "../components/Hero";
+// import Partner from "../components/Partner"
+import ContactUs from "../components/ContactUs";
+// import Testimonials from "../components/Testimonials"
+import FeacturedDestination from '../components/FeacturedDestination';
+import SectionText from "../components/SectionText";
+
+interface LocationState {
+  scrollTo?: string;
 }
 
-export default Home
+const Home = () => {
+  // Indicamos que location.state tiene tipo LocationState o undefined
+  const location = useLocation() as Location & { state?: LocationState };
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      scroller.scrollTo(location.state.scrollTo, {
+        smooth: true,
+        offset: -50,
+        duration: 600,
+      });
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+
+  return (
+    <>
+      <div id="home-page"><Hero /></div>
+      {/* <Partner /> */}
+      <div id="rooms-card"><FeacturedDestination /></div>
+      <div id="experience-sesion"><SectionText /></div>
+      {/* <AboutUs /> */}
+      {/* <Testimonials /> */}
+      <div id="contact-us"><ContactUs /></div>
+    </>
+  );
+}
+
+export default Home;

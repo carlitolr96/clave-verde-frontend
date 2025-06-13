@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom"; 
-import { useUser, UserButton } from '@clerk/clerk-react'; // useClerk, 
-import { Link as ScrollLink } from 'react-scroll';
+import { useUser, UserButton } from '@clerk/clerk-react';
+import { scroller } from 'react-scroll';
 import { FaRegAddressBook } from "react-icons/fa6";
-import LeavesEcology from "../assets/leaves-ecology.svg"
-import LeavesWhite from "../assets/leaves-white.svg"
+import LeavesEcology from "../assets/leaves-ecology.svg";
+import LeavesWhite from "../assets/leaves-white.svg";
 import LanguageSelector from './LanguageSelector';
 
 function NavBar() {
@@ -18,7 +18,6 @@ function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // const { openSignIn } = useClerk();
   const { user } = useUser();
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,6 +35,15 @@ function NavBar() {
 
   }, [location.pathname]);
 
+  const handleNavClick = (id: string) => {
+    if (location.pathname === '/') {
+      scroller.scrollTo(id, { smooth: true, offset: -50, duration: 600 });
+    } else {
+      navigate('/', { state: { scrollTo: id } });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed top-0 primary left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
       {/* Logo */}
@@ -49,20 +57,16 @@ function NavBar() {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
-          <ScrollLink
+          <div
             key={i}
-            to={link.id}
-            smooth={true}
-            duration={600}
-            offset={-50}
+            onClick={() => handleNavClick(link.id)}
             className={`cursor-pointer group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}
           >
             {link.name}
             <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
-          </ScrollLink>
+          </div>
         ))}
       </div>
-
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
@@ -128,7 +132,7 @@ function NavBar() {
 
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center gap-6 font-medium text-gray-800 transition-all duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <div className="w-full flex flex-col items-center gap-4 pt-16">
+        <div className="w-full flex flex-col items-center gap-4 pt-16 relative">
           <button className="absolute top-4 right-4" onClick={() => setIsMenuOpen(false)}>
             <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -137,18 +141,16 @@ function NavBar() {
           </button>
 
           {navLinks.map((link, i) => (
-            <ScrollLink
+            <div
               key={i}
-              to={link.id}
-              smooth={true}
-              duration={600}
-              offset={-50}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => handleNavClick(link.id)}
               className="cursor-pointer"
             >
               {link.name}
-            </ScrollLink>
+            </div>
           ))}
+
+          <LanguageSelector isScrolled={true} />
         </div>
 
         {user && (

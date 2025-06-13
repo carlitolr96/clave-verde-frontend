@@ -5,7 +5,7 @@ interface TitleProps {
   font?: string;
 }
 
-const Title = ({ title, subTitle, align = 'center', font = 'font-playfair' }: TitleProps) => {
+const Title = ({ title, subTitle, align = 'center', font = 'font-marcellus' }: TitleProps) => {
   return (
     <div className={`flex flex-col justify-center text-center ${align === 'left' ? 'md:items-start md:text-left' : 'items-center'}`}>
       <h1 className={`md:leading-[56px] font-bold md:font-extrabold max-w-xl text-4xl md:text-[30px] ${font}`}>{title}</h1>
