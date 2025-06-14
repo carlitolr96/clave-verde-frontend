@@ -1,15 +1,53 @@
 {
   "hero": {
     "title": "Descubre tu destino ecológico perfecto",
-    "subTitle": "Clave Verde, un refugio ecológico en Las Terrenas, República Dominicana. Naturaleza, vistas al mar y comodidad sostenible en el corazón del Caribe."
+    "subTitle": "Clave Verde, un refugio ecológico en Las Terrenas, República Dominicana. Naturaleza, vistas al mar y comodidad sostenible en el corazón del Caribe.",
+    "form": {
+      "checkIn": "Llegada",
+      "checkOut": "Salida",
+      "guests": "Personas",
+      "search": "Buscar"
+    }
   },
-
   "FeacturedDestination": {
     "title": "Vive la experiencia Clave Verde",
     "subTitle": "Sumérgete en la tranquilidad de la naturaleza en Samaná con nuestros paquetes especiales."
   },
-
   "SectionText": {
     "title": "Sesion de prueba Scroll Effect   "
+  },
+  "contact": {
+    "map": "Mapa",
+    "sendMessage": "Envíanos un mensaje",
+    "contactUs": "Contáctanos",
+    "knowMore": "Para saber más de ti",
+    "manualContact": "O simplemente contáctanos manualmente a través de",
+    "fullName": "Nombre Completo",
+    "namePlaceholder": "Introduce tu nombre completo",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "Introduce tu correo electrónico",
+    "message": "Mensaje",
+    "messagePlaceholder": "Introduce tu mensaje",
+    "sendForm": "Enviar Formulario",
+    "success": "¡Formulario enviado con éxito!",
+    "error": "Error al enviar el formulario."
+  },
+  "footer": {
+    "reserveNow": "Haz tu reserva con nosotros.",
+    "readyToServe": "Estamos listos para atenderte.",
+    "home": "Inicio",
+    "rooms": "Habitaciones",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "faq": "Preguntas Frecuentes",
+    "bookNow": "Reservar",
+    "links": "Enlaces",
+    "contactUs": "Contáctanos",
+    "phone": "(849) 205-1146",
+    "information": "Información",
+    "privacyPolicy": "Políticas de privacidad",
+    "termsConditions": "Términos y condiciones",
+    "rightsReserved": "Todos los derechos reservados",
+    "scrollTop": "Ir arriba"
   }
 }

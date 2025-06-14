@@ -9,6 +9,7 @@ import ContactUs from "../components/ContactUs";
 // import Testimonials from "../components/Testimonials"
 import FeacturedDestination from '../components/FeacturedDestination';
 import SectionText from "../components/SectionText";
+// import ServicesTypes from '../components/ServicesTypes';
 
 interface LocationState {
   scrollTo?: string;
@@ -35,6 +36,7 @@ const Home = () => {
       {/* <Partner /> */}
       <div id="rooms-card"><FeacturedDestination /></div>
       <div id="experience-sesion"><SectionText /></div>
+      {/* <div id="services-types"><ServicesTypes /></div> */}
       {/* <AboutUs /> */}
       {/* <Testimonials /> */}
       <div id="contact-us"><ContactUs /></div>

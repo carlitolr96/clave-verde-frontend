@@ -61,10 +61,10 @@ function Faq() {
             <div key={index} className="border-b border-gray-300 pb-4">
               <button
                 onClick={() => toggle(index)}
-                className="w-full text-left text-lg font-medium text-gray-800 flex justify-between items-center focus:outline-none"
+                className="w-full text-left text-lg font-medium text-gray-800 flex justify-between items-center focus:outline-none cursor-pointer"
               >
                 {faq.question}
-                <span className="text-2xl">{activeIndex === index ? "−" : "+"}</span>
+                <span className="text-2xl cursor-pointer">{activeIndex === index ? "−" : "+"}</span>
               </button>
               <AnimatePresence>
                 {activeIndex === index && (

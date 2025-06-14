@@ -9,7 +9,7 @@ const logos = [
 
 export default function InfiniteScroll() {
     return (
-        <div className="overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] whitespace-nowrap w-full bg-white py-6 ">
+        <div className="overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] whitespace-nowrap w-full bg-white py-6">
             <motion.div
                 className="flex gap-16 items-center"
                 animate={{ x: ["-100%", "0%"] }}

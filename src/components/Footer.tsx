@@ -3,19 +3,21 @@ import { Link as ScrollLink } from 'react-scroll';
 import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import { motion, useAnimationControls } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   const controls = useAnimationControls();
   const [isHovered, setIsHovered] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const footerRef = useRef<HTMLDivElement | null>(null);
 
   const footerLinks = [
-    { name: 'Inicio', id: 'home-page' },
-    { name: 'Habitaciones', id: 'rooms-card' },
-    { name: 'Experiencia', id: 'experience-sesion' },
-    { name: 'Contacto', id: 'contact-us' },
-    { name: 'Preguntas Frecuentes', path: 'preguntas-frecuentes' },
+    { name: t('footer.home'), id: 'home-page' },
+    { name: t('footer.rooms'), id: 'rooms-card' },
+    { name: t('footer.experience'), id: 'experience-sesion' },
+    { name: t('footer.contact'), id: 'contact-us' },
+    { name: t('footer.faq'), path: 'preguntas-frecuentes' },
   ];
 
   const words = [
@@ -73,12 +75,12 @@ function Footer() {
       <div className="px-6">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-10">
           <div className="flex-1 space-y-4 text-center lg:text-left mx-auto lg:mx-0 max-w-md lg:max-w-none">
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-0">Haz tu reserva con nosotros.</h2>
-            <h2 className="text-2xl sm:text-3xl font-semibold">Estamos listos para atenderte.</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-0">{t("footer.reserveNow")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold">{t("footer.readyToServe")}</h2>
             <button
               onClick={() => window.location.href = '/rooms'}
               className="bg-ecolodge text-white px-8 py-2.5 rounded-full hover:opacity-90 text-sm sm:text-base mt-4 cursor-pointer">
-              Reservar
+              {t("footer.bookNow")}
             </button>
           </div>
 
@@ -87,7 +89,7 @@ function Footer() {
 
             <div className="grid grid-cols-5 grid-rows-3 gap-4">
               <div className="col-span-2 row-span-2">
-                <h4 className="font-semibold mb-4">Enlaces</h4>
+                <h4 className="font-semibold mb-4">{t("footer.links")}</h4>
                 <ul className="space-y-2 text-sm">
                   {footerLinks.map((link, i) => (
                     link.id ? (
@@ -114,23 +116,23 @@ function Footer() {
                 </ul>
               </div>
               <div className="col-span-2 col-start-3">
-                <h4 className="font-semibold mb-4">Contáctanos</h4>
+                <h4 className="font-semibold mb-4">{t("footer.contactUs")}</h4>
                 <div className="space-y-2 text-sm">
-                  <p>(849) 205-1146</p>
+                  <p>{t("footer.phone")}</p>
                   <a href="mailto:contacto@claveverde.com" className="text-ecolodge hover:underline">
                     contacto@claveverde.com
                   </a>
                 </div>
               </div>
               <div className="col-span-3 col-start-3 row-start-2">
-                <h4 className="font-semibold mb-4">Informacion</h4>
+                <h4 className="font-semibold mb-4">{t("footer.information")}</h4>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <Link
                       className="hover:opacity-60"
                       to="/politicas-privacidad"
                       onClick={() => window.location.href = '/politicas-privacidad'}>
-                      Politicas de privacidad
+                      {t("footer.privacyPolicy")}
                     </Link>
                   </li>
                   <li>
@@ -138,7 +140,7 @@ function Footer() {
                       className="hover:opacity-60"
                       to={'/terminos-condiciones'}
                       onClick={() => window.location.href = '/terminos-condiciones'}>
-                      Terminos y condiciones
+                      {t("footer.termsConditions")}
                     </Link>
                   </li>
                 </ul>
@@ -198,7 +200,7 @@ function Footer() {
 
         {/* Derechos reservados */}
         <div className="text-center text-xs/relaxed text-gray-500 mt-8">
-          &copy; {new Date().getFullYear()} Clave Verde Hotel Boutique-Ecolodge. Todos los derechos reservados{" "}
+          &copy; {new Date().getFullYear()} Clave Verde Hotel Boutique-Ecolodge. {t("footer.rightsReserved")}{" "}
           <Link className="font-bold" target="_blank" to={"https://github.com/carlitolr96"}>
             CroalsDev
           </Link>.

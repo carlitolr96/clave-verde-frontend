@@ -1,15 +1,52 @@
 {
   "hero": {
     "title": "Discover your perfect eco-friendly destination",
-    "subTitle": "Clave Verde, an eco-retreat in Las Terrenas, Dominican Republic. Nature, ocean views, and sustainable comfort in the heart of the Caribbean."
+    "subTitle": "Clave Verde, an eco-retreat in Las Terrenas, Dominican Republic. Nature, ocean views, and sustainable comfort in the heart of the Caribbean.",
+    "form": {
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "guests": "Guests",
+      "search": "Search"
+    }
   },
-  
   "FeacturedDestination": {
     "title": "Live the Clave Verde experience",
     "subTitle": "Immerse yourself in the tranquility of nature in Samaná with our special packages."
   },
-
-    "SectionText": {
+  "SectionText": {
     "title": "Sesion is product Scroll Effect   "
+  },
+  "contact": {
+    "map": "Map",
+    "sendMessage": "Send us a message",
+    "contactUs": "Contact us",
+    "knowMore": "To learn more about you",
+    "manualContact": "Or simply contact us manually via",
+    "fullName": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "sendForm": "Send Form",
+    "success": "Form sent successfully!",
+    "error": "Error sending the form."
+  },
+  "footer": {
+    "reserveNow": "Book with us.",
+    "readyToServe": "We are ready to serve you.",
+    "home": "Home",
+    "rooms": "Rooms",
+    "experience": "Experience",
+    "contact": "Contact",
+    "faq": "Frequently Asked Questions",
+    "bookNow": "Book Now",
+    "links": "Links",
+    "contactUs": "Contact Us",
+    "phone": "(849) 205-1146",
+    "information": "Information",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "rightsReserved": "All rights reserved"
   }
 }

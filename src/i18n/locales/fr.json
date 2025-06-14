@@ -1,11 +1,49 @@
 {
   "hero": {
     "title": "Découvrez votre destination éco-responsable idéale",
-    "subTitle": "Clave Verde, un refuge écologique à Las Terrenas, en République dominicaine. Nature, vue sur l'océan et confort durable au cœur des Caraïbes."
+    "subTitle": "Clave Verde, un refuge écologique à Las Terrenas, en République dominicaine. Nature, vue sur l'océan et confort durable au cœur des Caraïbes.",
+     "form": {
+      "checkIn": "Arrivée",
+      "checkOut": "Départ",
+      "guests": "Personnes",
+      "search": "Rechercher"
+    }
   },
-  
   "FeacturedDestination": {
     "title": "Vivez l'expérience Clave Verde",
     "subTitle": "Plongez dans la tranquillité de la nature à Samaná avec nos forfaits spéciaux."
+  },
+  "contact": {
+    "map": "Carte",
+    "sendMessage": "Envoyez-nous un message",
+    "contactUs": "Contactez-nous",
+    "knowMore": "Pour mieux vous connaître",
+    "manualContact": "Ou contactez-nous simplement par",
+    "fullName": "Nom complet",
+    "namePlaceholder": "Entrez votre nom complet",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "message": "Message",
+    "messagePlaceholder": "Entrez votre message",
+    "sendForm": "Envoyer le formulaire",
+    "success": "Formulaire envoyé avec succès !",
+    "error": "Erreur lors de l'envoi du formulaire."
+  },
+  "footer": {
+    "reserveNow": "Réservez avec nous.",
+    "readyToServe": "Nous sommes prêts à vous servir.",
+    "home": "Accueil",
+    "rooms": "Chambres",
+    "experience": "Expérience",
+    "contact": "Contact",
+    "faq": "Foire aux questions",
+    "bookNow": "Réserver maintenant",
+    "links": "Liens",
+    "contactUs": "Contactez-nous",
+    "phone": "(849) 205-1146",
+    "information": "Information",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsConditions": "Conditions générales",
+    "rightsReserved": "Tous droits réservés"
   }
 }

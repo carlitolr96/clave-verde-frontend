@@ -30,3 +30,11 @@
   transition: opacity 0.3s ease;
   font-family: "Marcellus SC", serif !important;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
